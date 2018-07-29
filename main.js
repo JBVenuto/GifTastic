@@ -1,0 +1,34 @@
+//Array that will hold the animal names to make buttons
+var animals = ["dog", "cat", "bear", "seal", "sloth", "panda"];
+
+$(document).ready(function() {
+
+    //Function to make the buttons appear for the user
+    function makeButtons() {
+
+        //Deletes the buttons so they can be made again when new buttons are added
+        $("#buttons").empty();
+
+        //Loop through the array
+        for (var i = 0; i < animals.length; i++) {
+            
+            console.log(animals[i]);
+            //Generate a button for each animal
+            var bt = $("<button>");
+            //Add a class to the button
+            bt.addClass("animal-btn btn btn-outline-dark my-2 my-sm-0");
+            //Add an attribute that will be the term that is searched
+            bt.attr("data", animals[i]);
+            //Add a margin between buttons
+            bt.attr("style", "margin-right:2px")
+            //Add text to the button
+            bt.text(animals[i]);
+            //Add the button to the page
+            $("#buttons").append(bt);
+        };
+        
+    };
+
+    makeButtons();
+    
+})
