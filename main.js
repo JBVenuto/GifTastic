@@ -10,7 +10,19 @@ $(document).ready(function() {
         var choice = $(this).attr("data-name");
         console.log(choice);
 
+        //url that will be used to retrieve gifs
+        var gifUrl = "http://api.giphy.com/v1/gifs/search?q=" + choice + "&api_key=UxmqiBzAaPlG7XPYZ8IvblYSSfCEb8YI&limit=5";
 
+        //AJAX request to the url
+        $.ajax({
+            url: gifUrl,
+            method: "GET"
+        })
+        //This is what will happen after the data comes back
+        .then(function(response) {
+            console.log(response);
+            
+        })
     });
 
     //Function to add the user's animal to the array
