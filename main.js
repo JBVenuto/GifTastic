@@ -21,7 +21,19 @@ $(document).ready(function() {
         //This is what will happen after the data comes back
         .then(function(response) {
             console.log(response);
-            
+            //store the returened data
+            var results = response.data;
+
+            //Loop through the results 
+            for(i = 0; i < results.length; i++) {
+                //Make an image tag for the picture
+                var animalGif = $("<img>");
+                //Set the source of the image
+                animalGif.attr("src", results[i].images.fixed_height.url);
+                animalGif.attr("style", "margin:2px");
+                
+                $("#gifs").append(animalGif);
+            }
         })
     });
 
@@ -54,7 +66,7 @@ $(document).ready(function() {
             //Add an attribute that will be the term that is searched
             bt.attr("data-name", animals[i]);
             //Add a margin between buttons
-            bt.attr("style", "margin-right:2px")
+            bt.attr("style", "margin-right:2px");
             //Add text to the button
             bt.text(animals[i]);
             //Add the button to the page
