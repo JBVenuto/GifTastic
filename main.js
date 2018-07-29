@@ -31,8 +31,8 @@ $(document).ready(function() {
                 //Set the source of the image
                 animalGif.attr("src", results[i].images.fixed_height.url);
                 animalGif.attr("style", "margin:2px");
-                
-                $("#gifs").append(animalGif);
+
+                $("#gifs").prepend(animalGif);
             }
         })
     });
