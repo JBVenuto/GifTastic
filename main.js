@@ -11,7 +11,7 @@ $(document).ready(function() {
         console.log(choice);
 
         //url that will be used to retrieve gifs
-        var gifUrl = "http://api.giphy.com/v1/gifs/search?q=" + choice + "&api_key=UxmqiBzAaPlG7XPYZ8IvblYSSfCEb8YI&limit=5";
+        var gifUrl = "http://api.giphy.com/v1/gifs/search?q=" + choice + "&api_key=UxmqiBzAaPlG7XPYZ8IvblYSSfCEb8YI&limit=5&rating=pg";
 
         //AJAX request to the url
         $.ajax({
@@ -37,7 +37,7 @@ $(document).ready(function() {
                 animalGif.attr("data-state", "still");
                 //Adds some space between each gif
                 animalGif.attr("style", "margin:2px");
-
+                //Put the gifs onto the page
                 $("#gifs").prepend(animalGif);
             }
         })
@@ -83,18 +83,20 @@ $(document).ready(function() {
 
     makeButtons();
 
+    $(document).on("click", "img", function () {
     // $("img").on("click", function() {
-    //     //Get the data state of the image
-    //     var state = $(this).attr("data-state");
+        console.log("clicked");
+         //Get the data state of the image
+        var state = $(this).attr("data-state");
 
-    //     if(state === "still") {
-    //         $(this).attr("src", $(this).attr("data-animate"));
-    //         $(this).attr("data-state", "animate")
-    //     }
-    //     else {
-    //         $(this).attr("src", $(this).attr("data-still"));
-    //         $(this).attr("data-state", "still");
-    //     }
-    // })
+        if(state === "still") {
+            $(this).attr("src", $(this).attr("data-animate"));
+            $(this).attr("data-state", "animate")
+        }
+        else {
+            $(this).attr("src", $(this).attr("data-still"));
+            $(this).attr("data-state", "still");
+        }
+    })
     
 })
