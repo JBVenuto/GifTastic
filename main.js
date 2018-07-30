@@ -29,7 +29,13 @@ $(document).ready(function() {
                 //Make an image tag for the picture
                 var animalGif = $("<img>");
                 //Set the source of the image
-                animalGif.attr("src", results[i].images.fixed_height.url);
+                animalGif.attr("src", results[i].images.fixed_height_still.url);
+                //Make a still and animated attribute for the image
+                animalGif.attr("data-still", results[i].images.fixed_height_still.url);
+                animalGif.attr("data-animate", results[i].images.fixed_height.url);
+                //add an attribute to differentiate the animation state 
+                animal.attr("data-state", "still");
+                //Adds some space between each gif
                 animalGif.attr("style", "margin:2px");
 
                 $("#gifs").prepend(animalGif);
@@ -76,5 +82,19 @@ $(document).ready(function() {
     };
 
     makeButtons();
+
+    // $("img").on("click", function() {
+    //     //Get the data state of the image
+    //     var state = $(this).attr("data-state");
+
+    //     if(state === "still") {
+    //         $(this).attr("src", $(this).attr("data-animate"));
+    //         $(this).attr("data-state", "animate")
+    //     }
+    //     else {
+    //         $(this).attr("src", $(this).attr("data-still"));
+    //         $(this).attr("data-state", "still");
+    //     }
+    // })
     
 })
