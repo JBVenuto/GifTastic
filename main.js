@@ -11,7 +11,7 @@ $(document).ready(function() {
         console.log(choice);
 
         //url that will be used to retrieve gifs
-        var gifUrl = "http://api.giphy.com/v1/gifs/search?q=" + choice + "&api_key=UxmqiBzAaPlG7XPYZ8IvblYSSfCEb8YI&limit=5&rating=pg";
+        var gifUrl = "http://api.giphy.com/v1/gifs/search?q=" + choice + "&api_key=UxmqiBzAaPlG7XPYZ8IvblYSSfCEb8YI&limit=10&rating=pg";
 
         //AJAX request to the url
         $.ajax({
@@ -31,7 +31,10 @@ $(document).ready(function() {
                 var animalFig = $("<div>");
                 //Make a card to hold the image on top and rating on the bottom
                 animalFig.addClass("card");
+                //Give the cards a fixed width
                 animalFig.attr("style", "width:" + results[i].images.fixed_height.width + "px");
+                //Add margin between each card
+                animalFig.attr("style", "margin:2px");
 
                 //Make an image tag for the picture
                 var animalGif = $("<img>");
@@ -43,9 +46,7 @@ $(document).ready(function() {
                 animalGif.attr("data-animate", results[i].images.fixed_height.url);
                 //add an attribute to differentiate the animation state 
                 animalGif.attr("data-state", "still");
-                //Adds some space between each gif
-                animalGif.attr("style", "margin:2px");
-
+            
                 //Make a caption tag for the image rating
                 var rating = $("<card-body>").html("<p class='card-text'>Rating: " + results[i].rating + "</p>");
 
@@ -53,7 +54,7 @@ $(document).ready(function() {
                 animalFig.append(rating);
 
                 //Put the gifs onto the page
-                $("#gifs").prepend(animalFig);
+                $("#gifs").append(animalFig);
 
             }
         })
