@@ -34,7 +34,7 @@ $(document).ready(function() {
                 animalGif.attr("data-still", results[i].images.fixed_height_still.url);
                 animalGif.attr("data-animate", results[i].images.fixed_height.url);
                 //add an attribute to differentiate the animation state 
-                animal.attr("data-state", "still");
+                animalGif.attr("data-state", "still");
                 //Adds some space between each gif
                 animalGif.attr("style", "margin:2px");
 
