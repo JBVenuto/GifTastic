@@ -11,7 +11,7 @@ $(document).ready(function() {
         console.log(choice);
 
         //url that will be used to retrieve gifs
-        var gifUrl = "http://api.giphy.com/v1/gifs/search?q=" + choice + "&api_key=UxmqiBzAaPlG7XPYZ8IvblYSSfCEb8YI&limit=10&rating=pg";
+        var gifUrl = "https://api.giphy.com/v1/gifs/search?q=" + choice + "&api_key=UxmqiBzAaPlG7XPYZ8IvblYSSfCEb8YI&limit=10&rating=pg";
 
         //AJAX request to the url
         $.ajax({
