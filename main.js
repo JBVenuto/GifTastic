@@ -26,8 +26,16 @@ $(document).ready(function() {
 
             //Loop through the results 
             for(i = 0; i < results.length; i++) {
+
+                //Make a figure tag to hold the gif and a caption stating it's rating
+                var animalFig = $("<div>");
+                //Make a card to hold the image on top and rating on the bottom
+                animalFig.addClass("card");
+                animalFig.attr("style", "width:" + results[i].images.fixed_height.width + "px");
+
                 //Make an image tag for the picture
                 var animalGif = $("<img>");
+                animalGif.addClass("card-img-top")
                 //Set the source of the image
                 animalGif.attr("src", results[i].images.fixed_height_still.url);
                 //Make a still and animated attribute for the image
@@ -37,8 +45,16 @@ $(document).ready(function() {
                 animalGif.attr("data-state", "still");
                 //Adds some space between each gif
                 animalGif.attr("style", "margin:2px");
+
+                //Make a caption tag for the image rating
+                var rating = $("<card-body>").html("<p class='card-text'>Rating: " + results[i].rating + "</p>");
+
+                animalFig.append(animalGif);
+                animalFig.append(rating);
+
                 //Put the gifs onto the page
-                $("#gifs").prepend(animalGif);
+                $("#gifs").prepend(animalFig);
+
             }
         })
     });
