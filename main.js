@@ -54,7 +54,7 @@ $(document).ready(function() {
                 animalFig.append(rating);
 
                 //Put the gifs onto the page
-                $("#gifs").append(animalFig);
+                $("#gifs").prepend(animalFig);
 
             }
         })
