@@ -8,4 +8,4 @@ This app provides the user with buttons to perform a GIF search of different ani
 This game was written with HTML5, CSS3, JavaScript, and jQuery 3.3.1
 ------
 ## Screenshot
-![screenshot](images/screenshot.jpg)
+![screenshot](screenshot.jpg)
