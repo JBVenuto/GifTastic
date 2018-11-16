@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>GIF Tastic</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <link href="style.css">
+        <link rel="sytlesheet" href="style.css">
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <script src="main.js"></script>
 
@@ -15,22 +15,21 @@
 
     <body>
 
-        <div class="container">
-
-            <!--This is the form so that users can create a new button --> 
-            <nav class="navbar navbar-light bg-dark" id="nav" style="margin-bottom:3px">
-                <form class="form-inline">
+        <!--This is the form so that users can create a new button --> 
+        <nav class="navbar navbar-light bg-primary" id="nav" style="margin-bottom:3px">
+                <form class="form-inline container">
                     <input class="form-control mr-sm-2" id="input" type="text" placeholder="Add an animal">
-                    <button class="btn btn-secondary my-2 my-sm-0" id="add" type="submit">Add</button>
+                    <button class="btn btn-dark my-2 my-sm-0" id="add" type="submit">Add</button>
                 </form>
-            </nav>  
-        
+            </nav> 
+
+        <div class="container" id="allContent">        
             <!-- This is where the buttons will be located -->    
             <div id="buttons"></div>
         
             <!-- This is where the gifs will be -->
             <!-- <div class=row> -->
-                <div class="row" id="gifs"></div>
+                <div class="row" id="gifs" style="padding-left:15px; margin-top:5px"></div>
             <!-- </div> -->
         </div>
 

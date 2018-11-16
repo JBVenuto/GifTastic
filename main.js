@@ -85,7 +85,7 @@ $(document).ready(function() {
             //Generate a button for each animal
             var bt = $("<button>");
             //Add a class to the button
-            bt.addClass("animal-btn btn btn-outline-dark my-2 my-sm-0");
+            bt.addClass("animal-btn btn btn-dark my-2 my-sm-0");
             //Add an attribute that will be the term that is searched
             bt.attr("data-name", animals[i]);
             //Add a margin between buttons
